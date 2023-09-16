@@ -1,0 +1,8 @@
+.sign__body {
+    margin: 60px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 112px;
+}

@@ -1,0 +1,10 @@
+.sign-up__link-navigate {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: opasity 0.2s linear;
+    
+}
+
+.sign-up__link-navigate:hover {
+    opacity: 0.6;
+  }

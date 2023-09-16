@@ -1,0 +1,11 @@
+.popup__save_valid {
+  color: #ffffff;
+  background-color: #000000;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+}
+
+.popup__save_valid:hover {
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.8);
+}

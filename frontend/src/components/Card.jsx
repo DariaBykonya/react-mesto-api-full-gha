@@ -20,7 +20,6 @@ function handleLikeCard() {
     return (
       <div id="cardTemplate">
         <div className="element">
-          {/* {console.log("isOwnCardTresh", isOwnCard)} */}
         {isOwnCard &&  
           <button
               className="element__delete-button"

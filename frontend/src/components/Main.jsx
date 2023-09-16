@@ -33,7 +33,6 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, onDelete, 
           <button className="button profile__add-button" type="button" onClick={onAddPlace}/>
         </section>
         <section className="page-content elements">
-          {console.log(cards)}
          {isLoading ? <RenderLoading/> : cards.data.map(data => {
           return (
             <div id="cardTemplate" key={data._id}>

@@ -146,10 +146,7 @@ function App() {
     api.addCard(data)
     .then(
       (newCard) => {
-        console.log("newCard", newCard)
-        console.log("cards", cards)
         setCards({data:[newCard, ...cards.data]});
-        console.log(cards)
         closeAllPopups()
       })
       .catch(error => console.error(`Ошибка ${error}`))
@@ -169,14 +166,10 @@ function App() {
   }
 
   function handleCardLike(card) {
-    console.log("Cardddd", card)
     const isLiked = card.likes.some(i => i === currentUser._id);
-    console.log("isLiked", isLiked)
     api.changeLikeCardStatus(card._id, isLiked)
       .then(
         (newCard) => {
-          console.log('newCard`', newCard)
-          console.log(cards.data[0]._id)
           const newCards = cards.data.map((currentCard) => currentCard._id === card._id ? newCard : currentCard)
 
           setCards({data: newCards});

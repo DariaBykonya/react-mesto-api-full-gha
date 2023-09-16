@@ -70,7 +70,6 @@ class Api {
   
 
   addLike(cardId) {
-    console.log("LIIIIKE", cardId)
     return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: 'PUT',
       headers: this._headersData(),
@@ -78,7 +77,6 @@ class Api {
   }
 
   deleteLike(cardId) {
-    console.log("DELETEID", cardId)
     return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: 'DELETE',
       headers: this._headersData(),
@@ -86,7 +84,6 @@ class Api {
   }
 
   changeLikeCardStatus(id, isLiked) {
-    console.log(id, isLiked)
     if (isLiked) {
       return this.deleteLike(id);
     } else {

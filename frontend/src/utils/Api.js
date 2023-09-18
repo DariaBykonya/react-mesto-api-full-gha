@@ -18,12 +18,14 @@ class Api {
     return fetch(`${this._url}/users/me`, {
       method: 'GET',
       headers: this._headersData(),
+      credentials: 'include',
     }).then(this._checkQuery);
   }
   getCards() {
     return fetch(`${this._url}/cards`, {
       method: 'GET',
       headers: this._headersData(),
+      credentials: 'include',
     }).then(this._checkQuery);
   }
   patchUserInfo(data) {
@@ -33,7 +35,8 @@ class Api {
       body: JSON.stringify({
         name: data.nameuser,
         about: data.profession
-      })
+      }),
+      credentials: 'include',
     }).then(this._checkQuery);
   }
 
@@ -43,7 +46,8 @@ class Api {
       headers: this._headersData(),
       body: JSON.stringify({
         avatar: data.avatar
-      })
+      }),
+      credentials: 'include',
     }).then(this._checkQuery);
   }
 
@@ -54,7 +58,8 @@ class Api {
       body: JSON.stringify({
         name: data.name,
         link: data.link
-      })
+      }),
+      credentials: 'include',
     })
     .then(this._checkQuery)
     .then(response => {
@@ -73,6 +78,7 @@ class Api {
     return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: 'PUT',
       headers: this._headersData(),
+      credentials: 'include',
     }).then(this._checkQuery);
   }
 
@@ -80,6 +86,7 @@ class Api {
     return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: 'DELETE',
       headers: this._headersData(),
+      credentials: 'include',
     }).then(this._checkQuery);
   }
 
@@ -95,6 +102,7 @@ class Api {
     return fetch(`${this._url}/cards/${cardId}/`, {
       method: 'DELETE',
       headers: this._headersData(),
+      credentials: 'include',
     }).then(this._checkQuery);
   }
 }

@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'http://mesto.student-project.nomoredomainsrocks.ru';
 
 const checkResponse = (res) => {
   if (res.ok) {

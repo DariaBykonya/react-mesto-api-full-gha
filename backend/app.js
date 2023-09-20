@@ -10,8 +10,8 @@ const router = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT, MONGO_URL } = process.env;
-cess.env;
-ndler = require('./middlewares/corsHandler');
+
+const corsHandler = require('./middlewares/corsHandler');
 
 const app = express();
 

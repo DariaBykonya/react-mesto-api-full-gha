@@ -10,7 +10,8 @@ const router = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT, MONGO_URL } = process.env;
-const corsHandler = require('./middlewares/corsHandler');
+cess.env;
+ndler = require('./middlewares/corsHandler');
 
 const app = express();
 
@@ -35,12 +36,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // );
 
 app.use(
-  cors(),
-  //   {
-  //   // origin: 'http://localhost:3001',
-  //   exposedHeaders: ['set-cookie'],
-  //   credentials: true,
-  // }
+  cors({
+    origin: 'mesto.student-project.nomoredomainsrocks.ru',
+    exposedHeaders: ['set-cookie'],
+    credentials: true,
+  }),
 );
 app.use(requestLogger); // подключаем логгер запросов
 

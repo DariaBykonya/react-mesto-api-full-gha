@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: 'mesto.student-project.nomoredomainsrocks.ru',
+    origin: 'http://mesto.student-project.nomoredomainsrocks.ru',
     exposedHeaders: ['set-cookie'],
     credentials: true,
   }),

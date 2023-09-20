@@ -16,7 +16,7 @@ ndler = require('./middlewares/corsHandler');
 const app = express();
 
 app.use(cookieParser());
-// app.use(cors());
+app.use(cors());
 
 mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
@@ -35,13 +35,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   }),
 // );
 
-app.use(
-  cors({
-    origin: 'http://mesto.student-project.nomoredomainsrocks.ru',
-    exposedHeaders: ['set-cookie'],
-    credentials: true,
-  }),
-);
+// app.use(
+//   cors({
+//     origin: 'http://mesto.student-project.nomoredomainsrocks.ru',
+//     exposedHeaders: ['set-cookie'],
+//     credentials: true,
+//   }),
+// );
 app.use(requestLogger); // подключаем логгер запросов
 
 app.use(router);

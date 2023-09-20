@@ -112,7 +112,7 @@ const api = new Api({
   headers: {
     "Content-Type": "application/json",
     'Accept': 'application/json',
-  },
+  }
 });
 
 export default api;

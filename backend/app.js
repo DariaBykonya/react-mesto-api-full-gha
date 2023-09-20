@@ -10,6 +10,7 @@ const router = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 3000, MONGO_URL } = process.env;
+const corsHandler = require('./middlewares/corsHandler');
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use(cookieParser());
 mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
 });
+
+app.use(corsHandler);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

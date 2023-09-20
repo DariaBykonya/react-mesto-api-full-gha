@@ -9,7 +9,7 @@ const cors = require('cors');
 const router = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT, MONGO_URL } = process.env;
+const { PORT = 3000 } = process.env;
 
 const corsHandler = require('./middlewares/corsHandler');
 
@@ -18,7 +18,7 @@ const app = express();
 app.use(cookieParser());
 // app.use(cors());
 
-mongoose.connect(MONGO_URL, {
+mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
   useNewUrlParser: true,
 });
 

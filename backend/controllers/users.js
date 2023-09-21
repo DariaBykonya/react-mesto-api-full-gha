@@ -7,7 +7,6 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 // Errors
 const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
-const UnauthorizedError = require('../errors/UnauthorizedError');
 const ConflictError = require('../errors/ConflictError');
 
 const SALT_ROUNDS = 10;
@@ -90,9 +89,7 @@ module.exports.login = (req, res, next) => {
       })
         .send({ email });
     })
-    .catch(() => {
-      next(new UnauthorizedError('Неправильная почта или пароль'));
-    });
+    .catch(next);
 };
 
 module.exports.currentUser = (req, res, next) => {

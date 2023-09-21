@@ -16,10 +16,6 @@ module.exports.createCard = (req, res, next) => {
   const userId = req.user._id;
   const { name, link } = req.body;
 
-  if (!req.user) {
-    throw new UnauthorizedError('Пользователь не аутентифицирован');
-  }
-
   return Card.create({ name, link, owner: userId })
     .then((card) => {
       res.status(201).send({ data: card });

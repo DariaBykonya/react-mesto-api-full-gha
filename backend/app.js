@@ -3,7 +3,6 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 const cors = require('cors');
 const router = require('./routes/index');
@@ -24,8 +23,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
 
 app.use(corsHandler);
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // app.options(
 //   '*',

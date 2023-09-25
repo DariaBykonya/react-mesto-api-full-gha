@@ -26,14 +26,6 @@ app.use(corsHandler);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.options(
-//   '*',
-//   cors({
-//     origin: '*',
-//     credentials: true,
-//   }),
-// );
-
 app.use(
   cors({
     origin: 'https://mesto.student-project.nomoredomainsrocks.ru',

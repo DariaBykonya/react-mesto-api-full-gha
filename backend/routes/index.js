@@ -13,12 +13,6 @@ const {
   validationLogin,
 } = require('../middlewares/validation');
 
-router.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
-
 // вызов роутеров для пользователей и карточек
 router.post('/signup', validationCreateUser, createUser);
 router.post('/signin', validationLogin, login);
